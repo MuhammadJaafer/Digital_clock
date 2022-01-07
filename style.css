@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* fonts area */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+/* fonts area */
+
+body {
+}
+main {
+  background: black;
+  height: 100vh;
+}
+/* -------header section------  */
+header {
+  height: 12vh;
+}
+nav {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+.btn {
+  width: 4rem;
+  height: 4rem;
+  border: solid 3px white;
+  border-radius: 100%;
+}
+.color_changing {
+  display: flex;
+  width: 45vw;
+  height: 100%;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.background_button {
+  background: black;
+}
+.numbers_button {
+  background: white;
+}
+.font_button {
+  color: white;
+  font-size: 2.5em;
+  font-family: "Roboto", sans-serif;
+}
+/* --------clock section--------- */
+section {
+  height: 88vh;
+  width: 100vw;
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 4em;
+}
+.clock {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  align-items: baseline;
+  font-family: "Roboto", sans-serif;
+}
+.hour {
+}
+.minute {
+}
+.second {
+}
+.dote {
+  font-size: 1.5em;
+}
