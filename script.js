@@ -9,6 +9,8 @@ const colorPiker = document.querySelector(".colorPiker");
 const colorPikerDisplay = document.querySelector(".colorPikerhide");
 
 const amPmElement = document.querySelector(".am_pm");
+const body = document.body;
+const section = document.querySelector("section");
 //clock
 
 setInterval(() => {
@@ -116,11 +118,11 @@ const colorArr = [
   "#7e512b",
 ];
 //colors array
-//background color
+//background color----->>>
 
 //create the html part of the colors
 colorArr.forEach((color) => {
-  const html = `<div class="color" style="background:${color};"></div>`;
+  const html = `<div class="${color}  color"style="background:${color};"></div>`;
   colorPiker.insertAdjacentHTML("afterbegin", html);
 });
 const colorChose = document.querySelectorAll(".color");
@@ -135,6 +137,8 @@ numberColorButton.addEventListener("click", function () {
 colorChose.forEach((element) => {
   element.addEventListener("click", function () {
     colorPikerDisplay.style.display = "none";
+    body.style.background = `${element.className.slice(0, 8)}`;
+    section.style.background = `${element.className.slice(0, 8)}`;
   });
 });
-//background color
+//background color----->>>
