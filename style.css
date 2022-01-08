@@ -87,12 +87,13 @@ section {
 }
 /* <<<<----------color piker--------->>>> */
 .colorPiker {
-  width: 100vw;
+  width: 97vw;
   height: 40vh;
-  background: rgb(39, 39, 39);
+  background: rgb(0, 0, 0);
   position: absolute;
   top: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto;
@@ -103,6 +104,10 @@ section {
   overflow: auto;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 5px solid white;
+  border-top: none;
 }
 .color {
   width: 4rem;
