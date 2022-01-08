@@ -110,24 +110,28 @@ const colorArr = [
   "#c7ae7a",
   "#758eae",
   "#966c2e",
+  "black",
+  "white",
   "#92abb9",
   "#7e512b",
 ];
 //colors array
 //background color
+
+//create the html part of the colors
 colorArr.forEach((color) => {
   const html = `<div class="color" style="background:${color};"></div>`;
   colorPiker.insertAdjacentHTML("afterbegin", html);
 });
 const colorChose = document.querySelectorAll(".color");
-
+//display the colorspiker
 backgroundColorButton.addEventListener("click", function () {
   colorPikerDisplay.style.display = "grid";
 });
 numberColorButton.addEventListener("click", function () {
   colorPikerDisplay.style.display = "grid";
 });
-console.log(colorChose);
+//hide the color piker
 colorChose.forEach((element) => {
   element.addEventListener("click", function () {
     colorPikerDisplay.style.display = "none";
