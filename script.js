@@ -120,7 +120,9 @@ const colorArr = [
   "#7e512b",
 ];
 //colors array
+//fonts array
 
+//fonts array
 // add image background ........
 //background color----->>>
 
@@ -169,3 +171,6 @@ colorChose.forEach((element) => {
   });
 });
 //background color----->>>
+//font family changing
+
+//font family changing

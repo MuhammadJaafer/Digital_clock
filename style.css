@@ -114,7 +114,7 @@ section {
   height: 4rem;
   background: rgb(255, 0, 0);
   border-radius: 100%;
-  border: 3px solid white;
+  border: 2px solid white;
   z-index: -1;
 }
 .colorPikerhide {
