@@ -10,6 +10,10 @@ const colorPikerDisplay = document.querySelector(".colorPikerhide");
 const amPmElement = document.querySelector(".am_pm");
 const body = document.body;
 const section = document.querySelector("section");
+const nav = document.querySelector("nav");
+let currentBackground = "#000000";
+let currentFontColor = "#ffffff";
+let active;
 //clock
 
 setInterval(() => {
@@ -129,16 +133,39 @@ const colorChose = document.querySelectorAll(".color");
 //display the colorspiker
 backgroundColorButton.addEventListener("click", function () {
   colorPikerDisplay.style.display = "grid";
+  active = "background";
 });
 numberColorButton.addEventListener("click", function () {
   colorPikerDisplay.style.display = "grid";
+  active = "number";
 });
-//hide the color piker
+//hide the color piker and change the color
+
 colorChose.forEach((element) => {
   element.addEventListener("click", function () {
     colorPikerDisplay.style.display = "none";
-    body.style.background = `${element.className.slice(0, 8)}`;
-    section.style.background = `${element.className.slice(0, 8)}`;
+    if (active === "background") {
+      body.style.background = `${element.className.slice(0, 7)}`;
+      section.style.background = `${element.className.slice(0, 7)}`;
+      backgroundColorButton.style.background = `${element.className.slice(
+        0,
+        7
+      )}`;
+      currentBackground = `${element.className.slice(0, 7)}`;
+      if (currentBackground === "#ffffff") {
+        backgroundColorButton.style.borderColor = "#000000";
+        numberColorButton.style.borderColor = "#000000";
+      } else {
+        backgroundColorButton.style.borderColor = "#ffffff";
+        numberColorButton.style.borderColor = "#ffffff";
+      }
+    } else if (active === "number") {
+      body.style.color = `${element.className.slice(0, 7)}`;
+      section.style.color = `${element.className.slice(0, 7)}`;
+      fontStyleButton.style.color = `${element.className.slice(0, 7)}`;
+      numberColorButton.style.background = `${element.className.slice(0, 7)}`;
+      currentFontColor = `${element.className.slice(0, 7)}`;
+    }
   });
 });
 //background color----->>>
