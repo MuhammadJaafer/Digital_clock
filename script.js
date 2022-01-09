@@ -7,7 +7,6 @@ const numberColorButton = document.querySelector(".numbers_button");
 const fontStyleButton = document.querySelector(".font_button");
 const colorPiker = document.querySelector(".colorPiker");
 const colorPikerDisplay = document.querySelector(".colorPikerhide");
-
 const amPmElement = document.querySelector(".am_pm");
 const body = document.body;
 const section = document.querySelector("section");
@@ -60,7 +59,6 @@ const colorArr = [
   "#4dc7aa",
   "#c94057",
   "#4c9c68",
-
   "#d9764c",
   "#89a1d6",
   "#db9c4c",
@@ -112,12 +110,14 @@ const colorArr = [
   "#c7ae7a",
   "#758eae",
   "#966c2e",
-  "black",
-  "white",
+  "#000000",
+  "#ffffff",
   "#92abb9",
   "#7e512b",
 ];
 //colors array
+
+// add image background ........
 //background color----->>>
 
 //create the html part of the colors
