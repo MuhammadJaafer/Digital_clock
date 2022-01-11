@@ -1,8 +1,8 @@
 const section = document.querySelector("section");
 //emplement clock function
-const clockdisplay = function (_class = "clock") {
+const clockdisplay = function (_class = "clock", font = " ") {
   const html = `
-  <div class="${_class}">
+  <div class="${_class}" style="font-family:${font};">
   <div class="hour">00</div>
   <div class="dote">:</div>
   <div class="minute">00</div>
@@ -16,15 +16,13 @@ const clockdisplay = function (_class = "clock") {
 section.insertAdjacentHTML("afterbegin", clockdisplay("clock"));
 //emplement clock function
 //elements area
-const hourElement = document.querySelector(".hour");
-const minuteElement = document.querySelector(".minute");
-const secondeElement = document.querySelector(".second");
+
 const backgroundColorButton = document.querySelector(".background_button");
 const numberColorButton = document.querySelector(".numbers_button");
 const fontStyleButton = document.querySelector(".font_button");
 const colorPiker = document.querySelector(".colorPiker");
 const colorPikerDisplay = document.querySelector(".colorPikerhide");
-const amPmElement = document.querySelector(".am_pm");
+
 const body = document.body;
 const nav = document.querySelector("nav");
 const fontPiker = document.querySelector(".fontPiker");
@@ -34,37 +32,37 @@ let active;
 //clock
 //fonts array
 const fontArr = [
-  "Abel",
-  "Alfa Slab One",
-  "Anonymous Pro",
-  "Antic",
-  "Be Vietnam Pro",
-  "Cabin Sketch",
-  "Cairo",
-  "Cinzel Decorative",
-  "Great Vibes",
-  "IM Fell English SC",
-  "Leckerli One",
-  "Licorice",
-  "Luxurious Roman",
-  "Monoton",
-  "Norican",
-  "Oswald",
-  "Permanent Marker",
-  "Press Start 2P",
-  "Rancho",
-  "Shadows Into Light",
-  "Shizuru",
-  "Staatliches",
-  "The Nautigal",
-  "Ubuntu Mono",
-  "Vujahday Script",
-  "Yesteryear",
+  "'Abel' ,sans-serif",
+  "'Alfa Slab One', cursive",
+  "'Anonymous Pro', monospace",
+  "'Antic', sans-serif",
+  "'Be Vietnam Pro' ,sans-serif",
+  "'Cabin Sketch', cursive",
+  "'Cairo', sans-serif",
+  "'Cinzel Decorative', cursive",
+  "'Great Vibes', cursive",
+  "'IM Fell English SC', serif",
+  "'Leckerli One', cursive",
+  "'Licorice', cursive",
+  "'Luxurious Roman', cursive",
+  "'Monoton', cursive",
+  "'Norican', cursive",
+  "'Oswald', sans-serif",
+  "'Permanent Marker', cursive",
+  "'Press Start 2P', cursive",
+  "'Rancho', cursive",
+  "'Shadows Into Light', cursive",
+  "'Shizuru', cursive",
+  "'Staatliches', cursive",
+  "'The Nautigal', cursive",
+  "'Ubuntu Mono', monospace",
+  "'Vujahday Script', cursive",
+  "'Yesteryear', cursive",
 ];
 //fonts array
 //font family changing
 fontArr.forEach((font) => {
-  fontPiker.insertAdjacentHTML("afterbegin", clockdisplay("mineClock"));
+  fontPiker.insertAdjacentHTML("afterbegin", clockdisplay("mineClock", font));
 });
 fontStyleButton.addEventListener("click", function () {
   fontPiker.style.display = "grid";
@@ -76,22 +74,30 @@ fontChose.forEach((element) => {
   });
 });
 //font family changing
-
+const hourElement = document.querySelectorAll(".hour");
+const minuteElement = document.querySelectorAll(".minute");
+const secondeElement = document.querySelectorAll(".second");
+const amPmElement = document.querySelectorAll(".am_pm");
 setInterval(() => {
   const now = new Date();
-  hourElement.textContent = new Intl.DateTimeFormat("en-US", {
-    hour: "numeric",
-  })
-    .format(now)
-    .slice(0, 2);
-  minuteElement.textContent = now.getMinutes();
-  secondeElement.textContent = now.getSeconds();
-  amPmElement.textContent = new Intl.DateTimeFormat("en-US", {
-    hour: "numeric",
-  })
-    .format(now)
-    .slice(2)
-    .toLowerCase();
+  hourElement.forEach((element) => {
+    element.textContent = new Intl.DateTimeFormat("en-US", {
+      hour: "numeric",
+    })
+      .format(now)
+      .slice(0, 2);
+  });
+  minuteElement.forEach((element) => (element.textContent = now.getMinutes()));
+  secondeElement.forEach((element) => (element.textContent = now.getSeconds()));
+  amPmElement.forEach(
+    (element) =>
+      (element.textContent = new Intl.DateTimeFormat("en-US", {
+        hour: "numeric",
+      })
+        .format(now)
+        .slice(2)
+        .toLowerCase())
+  );
 }, 1000);
 //clock
 
