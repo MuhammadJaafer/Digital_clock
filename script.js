@@ -1,8 +1,8 @@
 const section = document.querySelector("section");
 //emplement clock function
-const clockdisplay = function (_class = "clock", font = " ") {
+const clockdisplay = function (_class = "clock", font = " ", id = "") {
   const html = `
-  <div class="${_class}" style="font-family:${font};">
+  <div class="${_class}" id="${font}" style="font-family:${font};">
   <div class="hour">00</div>
   <div class="dote">:</div>
   <div class="minute">00</div>
@@ -49,7 +49,6 @@ const fontArr = [
   "'Norican', cursive",
   "'Oswald', sans-serif",
   "'Permanent Marker', cursive",
-  "'Press Start 2P', cursive",
   "'Rancho', cursive",
   "'Shadows Into Light', cursive",
   "'Shizuru', cursive",
@@ -62,7 +61,10 @@ const fontArr = [
 //fonts array
 //font family changing
 fontArr.forEach((font) => {
-  fontPiker.insertAdjacentHTML("afterbegin", clockdisplay("mineClock", font));
+  fontPiker.insertAdjacentHTML(
+    "afterbegin",
+    clockdisplay("mineClock", font, font)
+  );
 });
 fontStyleButton.addEventListener("click", function () {
   fontPiker.style.display = "grid";
@@ -71,6 +73,7 @@ const fontChose = document.querySelectorAll(".mineClock");
 fontChose.forEach((element) => {
   element.addEventListener("click", function () {
     fontPiker.style.display = "none";
+    document.querySelector(".clock").style.fontFamily = `${element.id}`;
   });
 });
 //font family changing
