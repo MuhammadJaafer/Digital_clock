@@ -1,8 +1,8 @@
 const section = document.querySelector("section");
 //emplement clock function
-const clockdisplay = function () {
+const clockdisplay = function (_class = "clock") {
   const html = `
-  <div class="clock">
+  <div class="${_class}">
   <div class="hour">00</div>
   <div class="dote">:</div>
   <div class="minute">00</div>
@@ -11,9 +11,9 @@ const clockdisplay = function () {
   <div class="am_pm">am</div>
 </div>
 `;
-  section.insertAdjacentHTML("afterbegin", html);
+  return html;
 };
-clockdisplay();
+section.insertAdjacentHTML("afterbegin", clockdisplay("clock"));
 //emplement clock function
 //elements area
 const hourElement = document.querySelector(".hour");
@@ -32,6 +32,50 @@ let currentBackground = "#000000";
 let currentFontColor = "#ffffff";
 let active;
 //clock
+//fonts array
+const fontArr = [
+  "Abel",
+  "Alfa Slab One",
+  "Anonymous Pro",
+  "Antic",
+  "Be Vietnam Pro",
+  "Cabin Sketch",
+  "Cairo",
+  "Cinzel Decorative",
+  "Great Vibes",
+  "IM Fell English SC",
+  "Leckerli One",
+  "Licorice",
+  "Luxurious Roman",
+  "Monoton",
+  "Norican",
+  "Oswald",
+  "Permanent Marker",
+  "Press Start 2P",
+  "Rancho",
+  "Shadows Into Light",
+  "Shizuru",
+  "Staatliches",
+  "The Nautigal",
+  "Ubuntu Mono",
+  "Vujahday Script",
+  "Yesteryear",
+];
+//fonts array
+//font family changing
+fontArr.forEach((font) => {
+  fontPiker.insertAdjacentHTML("afterbegin", clockdisplay("mineClock"));
+});
+fontStyleButton.addEventListener("click", function () {
+  fontPiker.style.display = "grid";
+});
+const fontChose = document.querySelectorAll(".mineClock");
+fontChose.forEach((element) => {
+  element.addEventListener("click", function () {
+    fontPiker.style.display = "none";
+  });
+});
+//font family changing
 
 setInterval(() => {
   const now = new Date();
@@ -137,36 +181,7 @@ const colorArr = [
   "#7e512b",
 ];
 //colors array
-//fonts array
-const fontArr = [
-  "Abel",
-  "Alfa Slab One",
-  "Anonymous Pro",
-  "Antic",
-  "Be Vietnam Pro",
-  "Cabin Sketch",
-  "Cairo",
-  "Cinzel Decorative",
-  "Great Vibes",
-  "IM Fell English SC",
-  "Leckerli One",
-  "Licorice",
-  "Luxurious Roman",
-  "Monoton",
-  "Norican",
-  "Oswald",
-  "Permanent Marker",
-  "Press Start 2P",
-  "Rancho",
-  "Shadows Into Light",
-  "Shizuru",
-  "Staatliches",
-  "The Nautigal",
-  "Ubuntu Mono",
-  "Vujahday Script",
-  "Yesteryear",
-];
-//fonts array
+
 // add image background ........
 //background color----->>>
 
@@ -215,9 +230,3 @@ colorChose.forEach((element) => {
   });
 });
 //background color----->>>
-//font family changing
-fontArr.forEach((font) => {
-  const html = `<div class="${font} font"style="font-family:'${font}',san serf;">font</div>`;
-  fontPiker.insertAdjacentHTML("afterbegin", html);
-});
-//font family changing
