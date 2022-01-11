@@ -4,6 +4,7 @@
 }
 /* fonts area */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Alfa+Slab+One&family=Anonymous+Pro&family=Antic&family=Be+Vietnam+Pro&family=Cabin+Sketch&family=Cairo&family=Cinzel+Decorative&family=Great+Vibes&family=IM+Fell+English+SC&family=Leckerli+One&family=Licorice&family=Luxurious+Roman&family=Monoton&family=Norican&family=Oswald&family=Permanent+Marker&family=Press+Start+2P&family=Rancho&family=Shadows+Into+Light&family=Shizuru&family=Staatliches&family=The+Nautigal&family=Ubuntu+Mono&family=Vujahday+Script&family=Yesteryear&display=swap");
 /* fonts area */
 
 body {
@@ -145,13 +146,17 @@ section {
   border: 5px solid white;
   border-top: none;
 }
+.fontPikerHide {
+  display: none;
+}
 .font {
   height: 40px;
   width: 100%;
   color: white;
-  font-size: 1.5rem;
   z-index: -1;
   text-align: center;
-  font-weight: 500;
+  color: white;
+  font-size: 1.5em;
+  font-family: "Roboto", sans-serif;
 }
 /* <<<<----------font piker--------->>>> */
